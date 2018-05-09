@@ -14,7 +14,7 @@ pipeline {
         }
 		stage ('Deploy to Staging'){
             steps {
-                build job: 'Deploy_to_staging'
+                build job: 'Deploy_to_staging_pipeline_code'
             }
         }
 		stage ('Deploy to Production'){
@@ -23,7 +23,7 @@ pipeline {
                     input message:'Approve PRODUCTION Deployment?'
                 }
 
-                build job: 'Deploy-to-Prod'
+                build job: 'Deploy_to_production_Pipeline_code'
             }
             post {
                 success {
